@@ -1,7 +1,6 @@
 import path from 'path';
 import fs from 'fs';
 import superagent from 'superagent';
-import StarlistAnalyzer from './starlistAnalyzer';
 
 export interface Analyzer {
   analyze: (html: string, filePath: string) => string;
@@ -29,6 +28,5 @@ class Crowller {
     return result.text;
   }
 }
-const url = 'https://www.starlist.pro/';
-const analyzer = StarlistAnalyzer.getInstance();
-new Crowller(url, analyzer);
+
+export default Crowller;
