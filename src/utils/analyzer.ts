@@ -45,7 +45,8 @@ export default class StarlistAnalyzer implements Analyzer {
           .css('background-image')
           .slice(4)
           .slice(0, -1)
-          .replace(/\'/g, '');
+          .replace(/\'/g, '')
+          .replace(/\\/, '');
         const brawlerURL = starURL + imageURL;
         const brawlerDetail = starURL + $(e).attr('href');
         brawlerRates.push({
